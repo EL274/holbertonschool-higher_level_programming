@@ -1,3 +1,2 @@
 def common_elements(set_1, set_2):
-        return set_1 & set_2  # Using the set intersection operator
-
+    return set_1 & set_2  # Using the set intersection operator
