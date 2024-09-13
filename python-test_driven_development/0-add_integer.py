@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def add_integer(a, b=98):
     # Check if 'a' is an integer or a float, otherwise raise a TypeError
     if not isinstance(a, (int, float)):
