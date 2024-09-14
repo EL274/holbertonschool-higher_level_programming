@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 ===========================
 How to Use 0-add_integer.py
 ===========================
@@ -100,7 +101,7 @@ that value is equivalent to using the ``+`` operator.
 															    >>> add_integer(float('inf'))
 															        Traceback (most recent call last):
 																    OverflowError: cannot convert float infinity to integer
-																         
+
 
 																	 ::
 
