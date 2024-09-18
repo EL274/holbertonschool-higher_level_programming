@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-"""creates class Square with
-private instance attribute size and public instance method"""
-
+"""Defines a class Square with a private instance attribute size and public instance methods."""
 
 class Square:
-    """defines class with instantiated and validated private instance attribute
-and public instance method."""
+    """Represents a square."""
 
     def __init__(self, size=0):
-        self.__size = size
+        """Initializes the square with a validated size."""
+        self.size = size  # Use the setter to validate size
 
     @property
     def size(self):
-        return(self.__size)
+        """Getter for the size attribute."""
+        return self.__size
 
     @size.setter
     def size(self, value):
-        if type(value) is not int:
+        """Setter for the size attribute with validation."""
+        if not isinstance(value, int):  # Use isinstance for type checking
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
-        """calculates and returns current square area"""
-        return(self.__size * self.__size)
+        """Calculates and returns the area of the square."""
+        return self.__size ** 2  # Use exponentiation for square
