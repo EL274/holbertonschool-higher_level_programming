@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 class Square:
-    """Represent a square."""
+"""defines class with instantiated and validated private instance attribute
+and public instance method."""
 
     def __init__(self, size=0):
-        """Initialize a new square.
-
-        Args:
-            size (int): The size of the new square.
-        """
-        self.size = size
+        self.__size = size
 
     @property
-    def size(self):
-        """Get/set the current size of the square."""
-        return (self.__size)
+def size(self):
+        return(self.__size)
 
     @size.setter
     def __init__(self, size=0):
