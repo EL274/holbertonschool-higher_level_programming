@@ -6,7 +6,7 @@ class Square:
 
     def __init__(self, size=0):
         """Initializes the square with a validated size."""
-        self.size = size  # Use the setter to validate size
+        self.size = size
 
     @property
     def size(self):
@@ -16,7 +16,7 @@ class Square:
     @size.setter
     def size(self, value):
         """Setter for the size attribute with validation."""
-        if not isinstance(value, int):  # Use isinstance for type checking
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -24,4 +24,4 @@ class Square:
 
     def area(self):
         """Calculates and returns the area of the square."""
-        return self.__size ** 2  # Use exponentiation for square
+        return self.__size ** 2
