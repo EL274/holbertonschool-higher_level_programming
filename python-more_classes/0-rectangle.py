@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-class Square:
-    """Represent a square."""
+class rectangle:
+    """Represent a rectangle."""
     pass
