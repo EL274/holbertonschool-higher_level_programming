@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""defines class BaseGeometry with  public instance method for area"""
+"""Defines class BaseGeometry with a public instance method for area."""
 
 
 class BaseGeometry:
-    """class with public instance method to raise exception"""
-    def area(self):
-    raise Exception("area() is not implemented")
+    """Class with a public instance method to raise an exception."""
     
+    def area(self):
+        """Raises an exception to indicate the method is not implemented."""
+        raise Exception("area() is not implemented")
