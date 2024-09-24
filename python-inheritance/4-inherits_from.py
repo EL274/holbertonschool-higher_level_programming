@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Defines a function to see an object is an instance of a class
-or the specified class"""
+"""Defines a function to see an object is an instance of a class or the specified class"""
 
 
 def inherits_from(obj, a_class):
