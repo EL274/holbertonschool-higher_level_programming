@@ -25,4 +25,3 @@ cat = Cat()
 
 print(dog.sound())  # Affiche "Bark"
 print(cat.sound())  # Affiche "Meow"
-
