@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-"""defines class square inherits rectangle"""
+"""defines class Square that inherits from Rectangle"""
 
 
-Rectangle = _import_('9-rectangle').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Shape(rectangle):
+class Square(Rectangle):
+    """class for square that inherits from Rectangle
+    with method for area"""
     def __init__(self, size):
-        self.__integer_validator(size)
+        """initializes Square instance"""
+        self.integer_validator("size", size)
         self.__size = size
-
-    def __integer_validator(self, size):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size <= 0:
-            raise ValueError("size must be a positive integer")
+        super().__init__(size, size)
 
     def area(self):
-        raise NotImplementedError("The area() method must be implemented by subclasses")
+        """returns area of square"""
+        return (self.__size * self.__size)
+    
