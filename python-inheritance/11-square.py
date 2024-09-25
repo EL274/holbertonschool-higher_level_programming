@@ -2,6 +2,9 @@
 """Defines class Square that inherits from Rectangle"""
 
 
+Rectangle = _import_('9-rectangle').Rectangle
+
+
 class Square(Rectangle):
     """Class for Square that inherits from Rectangle
     with methods for area and string representation."""
