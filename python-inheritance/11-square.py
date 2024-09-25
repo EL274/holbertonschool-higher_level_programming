@@ -2,11 +2,10 @@
 """Defines class Square that inherits from Rectangle"""
 
 
-
 class Square(Rectangle):
     """Class for Square that inherits from Rectangle
     with methods for area and string representation."""
-    
+
     def __init__(self, size):
         """Initializes Square instance"""
         self.__size = self.integer_validator(size)
