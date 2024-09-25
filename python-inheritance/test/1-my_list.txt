@@ -50,18 +50,3 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 >>> my_list.pop()
 20
 >>> my_list
-[10, 5, 8]
-
-"""
-
-class MyList(list):
-    """Class that inherits from list and adds a method to print sorted list."""
-
-    def print_sorted(self):
-        """Prints the list in sorted order, without modifying the original list."""
-        print(sorted(self))
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
