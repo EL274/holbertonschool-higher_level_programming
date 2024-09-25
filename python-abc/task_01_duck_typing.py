@@ -1,18 +1,23 @@
 from abc import ABC, abstractmethod
 
-
-"""Classe abstraite Animal"""
+# Abstract class Animal inheriting from ABC
 class Animal(ABC):
 
+    # Abstract method that must be implemented in subclasses
     @abstractmethod
     def sound(self):
         pass
-"""Sous-classe Dog qui hérite de Animal"""
+
+# Subclass Dog inheriting from Animal
 class Dog(Animal):
     
+    # Implementing the sound method for Dog
     def sound(self):
         return "Bark"
-"""Sous-classe Cat qui hérite de Animal"""
+
+# Subclass Cat inheriting from Animal
 class Cat(Animal):
+    
+    # Implementing the sound method for Cat
     def sound(self):
         return "Meow"
