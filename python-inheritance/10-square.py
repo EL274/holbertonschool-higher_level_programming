@@ -2,7 +2,10 @@
 """defines class square inherits rectangle"""
 
 
-class Shape:
+Rectangle = _import_('9-rectangle').Rectangle
+
+
+class Shape(rectangle):
     def __init__(self, size):
         self.__integer_validator(size)
         self.__size = size
