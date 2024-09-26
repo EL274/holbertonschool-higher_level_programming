@@ -6,4 +6,3 @@ rectangle = Rectangle(width=4, height=7)
 
 shape_info(circle)
 shape_info(rectangle)
-
