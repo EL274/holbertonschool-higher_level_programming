@@ -7,7 +7,7 @@ class VerboseList(list):
         print(f"Added {item} to the list.")
 
     def extend(self, iterable):
-        """Extend the list by appending elements from the iterable and print a notification."""
+        """Extend the list iterable and print a notification."""
         super().extend(iterable)
         print(f"Extended the list with {len(iterable)} items.")
 
