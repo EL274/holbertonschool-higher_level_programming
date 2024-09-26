@@ -21,11 +21,3 @@ class Cat(Animal):
     def sound(self):
         """Implementing the sound method for Cat."""
         return "Meow"
-
-# Test des classes
-if __name__ == "__main__":
-    dog = Dog()
-    cat = Cat()
-
-    print(dog.sound())  # Affiche : Bark
-    print(cat.sound())  # Affiche : Meow
