@@ -5,7 +5,7 @@ class Animal(ABC):
     """Abstract class that defines a sound method to be implemented by subclasses"""
     @abstractmethod
     def sound(self):
-        """Abstract method must be implemented in subclasses to make a sound."""
+        """Abstract method implimented in subclass"""
         pass
 
 
