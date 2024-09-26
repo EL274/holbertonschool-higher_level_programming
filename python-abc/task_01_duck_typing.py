@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
-    """Abstract class that defines a sound method to be implemented by subclasses"""
+    """Abstract class defines a sound method implemented by subclasses"""
     @abstractmethod
     def sound(self):
         """Abstract method implimented in subclass"""
