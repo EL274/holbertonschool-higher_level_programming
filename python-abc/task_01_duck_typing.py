@@ -1,23 +1,31 @@
 from abc import ABC, abstractmethod
 
-""" Abstract class Animal inheriting from ABC"""
-
 class Animal(ABC):
-"""Abstract method that must be implemented in subclasses"""
+    """Abstract class that defines a sound method to be implemented by subclasses."""
+    
     @abstractmethod
     def sound(self):
+        """Abstract method that must be implemented in subclasses to make a sound."""
         pass
 
-"""Subclass Dog inheriting from Animal"""
 class Dog(Animal):
+    """Subclass Dog inheriting from Animal."""
     
-    """Implementing the sound method for Dog"""
     def sound(self):
+        """Implementing the sound method for Dog."""
         return "Bark"
 
-# Subclass Cat inheriting from Animal
 class Cat(Animal):
+    """Subclass Cat inheriting from Animal."""
     
-    # Implementing the sound method for Cat
     def sound(self):
+        """Implementing the sound method for Cat."""
         return "Meow"
+
+# Test des classes
+if __name__ == "__main__":
+    dog = Dog()
+    cat = Cat()
+
+    print(dog.sound())  # Affiche : Bark
+    print(cat.sound())  # Affiche : Meow
