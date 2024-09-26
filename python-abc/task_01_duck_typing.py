@@ -11,7 +11,6 @@ class Animal(ABC):
 
 class Dog(Animal):
     """Subclass Dog inheriting from Animal."""
-    
     def sound(self):
         """Implementing the sound method for Dog."""
         return "Bark"
