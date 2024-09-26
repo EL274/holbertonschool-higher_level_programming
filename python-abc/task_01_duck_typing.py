@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
-    """Abstract class that defines a sound method to be implemented by subclasses."""
+    """Abstract class that defines a sound method to be implemented by subclasses"""
     @abstractmethod
     def sound(self):
-        """Abstract method that must be implemented in subclasses to make a sound."""
+        """Abstract method must be implemented in subclasses to make a sound."""
         pass
 
 
