@@ -12,7 +12,7 @@ class VerboseList(list):
         print(f"Extended the list with {len(iterable)} items.")
 
     def remove(self, item):
-        """Remove the first occurrence of item from the list and print a notification."""
+        """Remove the first list and print a notification."""
         print(f"Removing {item} from the list.")
         super().remove(item)
 
