@@ -20,7 +20,6 @@ class Dog(Animal):
 
 class Cat(Animal):
     """Subclass Cat inheriting from Animal."""
-    
     def sound(self):
         """Implementing the sound method for Cat."""
         return "Meow"
