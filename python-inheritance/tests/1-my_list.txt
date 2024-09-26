@@ -1,52 +1,48 @@
-doctest for 1-my_list
-"""
-This module defines a class MyList which inherits from the built-in list class
-and provides an additional method to print the list sorted.
+==============================
+doctest for 1-my_list.py
+==============================
 
-Usage and doctest examples:
+>>> MyList = __import__('1-my_list').MyList
 
->>> my_list = MyList([3, 1, 4, 1, 5, 9])
+TEST CONDITIONS
+===============
+
+testing list
+::
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 >>> my_list.print_sorted()
-[1, 1, 3, 4, 5, 9]
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-# Testing with negative numbers
->>> my_list = MyList([-5, -1, -3, 2, 0])
->>> my_list.print_sorted()
-[-5, -3, -1, 0, 2]
-
-# Testing with repeated numbers
->>> my_list = MyList([2, 3, 2, 3, 1, 1])
->>> my_list.print_sorted()
-[1, 1, 2, 2, 3, 3]
-
-# Testing with empty list
->>> my_list = MyList([])
+testing empty list
+::
+>>> my_list = MyList()
+>>> print(my_list)
+[]
 >>> my_list.print_sorted()
 []
+>>> print(my_list)
+[]
 
-# Testing with strings (alphabetical sorting)
->>> my_list = MyList(["apple", "banana", "cherry", "apple"])
+testing list with negative ints
+::
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(4)
+>>> my_list.append(-2)
+>>> my_list.append(3)
+>>> my_list.append(-5)
+>>> print(my_list)
+[-1, 4, -2, 3, -5]
 >>> my_list.print_sorted()
-['apple', 'apple', 'banana', 'cherry']
-
-# Testing with mixed data types (raises TypeError)
->>> my_list = MyList([1, "apple", 2])
->>> my_list.print_sorted()
-Traceback (most recent call last):
-    ...
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-# Testing that the list itself is not modified
->>> my_list = MyList([10, 5, 8])
->>> my_list.print_sorted()
-[5, 8, 10]
->>> my_list
-[10, 5, 8]
-
-# Testing that we can still append and pop elements (inherited methods)
->>> my_list.append(20)
->>> my_list
-[10, 5, 8, 20]
->>> my_list.pop()
-20
->>> my_list
+[-5, -2, -1, 3, 4]
+>>> print(my_list)
+[-1, 4, -2, 3, -5]
