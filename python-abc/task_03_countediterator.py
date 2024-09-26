@@ -18,17 +18,3 @@ class CountedIterator:
             return item
         except StopIteration:
             raise StopIteration  # This will stop the iteration
-
-
-# Testing
-if __name__ == "__main__":
-    # Instantiate a CountedIterator object using a list
-    counted_iter = CountedIterator([10, 20, 30, 40, 50])
-
-    # Iterate over items using a loop
-    for item in counted_iter:
-        print(item)  # Print the item
-
-    # Use the get_count method to retrieve and print the number of items fetched
-    print(f"Total items iterated: {counted_iter.get_count()}")
-
