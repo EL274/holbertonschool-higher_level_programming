@@ -26,10 +26,3 @@ try:
     print(type(my_fake))
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
-
-guillaume@ubuntu:~/$ cat my_list.json ; echo ""
-[1, 2, 3]
-guillaume@ubuntu:~/$ cat my_dict.json ; echo ""
-{"name": "John", "places": ["San Francisco", "Tokyo"], "id": 12, "info": {"average": 3.14, "age": 36}, "is_active": true}
-guillaume@ubuntu:~/$ cat my_fake.json ; echo ""
-{"is_active": true, 12 }
