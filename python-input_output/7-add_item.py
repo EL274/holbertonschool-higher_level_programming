@@ -12,4 +12,3 @@ except FileNotFoundError:
     arglist = []
 arglist += argv[1:]
 save_to_json_file(arglist, "add_item.json")
-
