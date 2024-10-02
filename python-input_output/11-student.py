@@ -1,4 +1,4 @@
-                                                                                                                                                                                 class Student:
+class Student:
     def __init__(self, first_name, last_name, age):
         """Initialise les attributs de l'instance Student"""
         self.first_name = first_name
@@ -21,13 +21,3 @@
         """
         for key, value in json.items():
             setattr(self, key, value)
-
-# Exemple d'utilisation :
-student = Student("John", "Doe", 23)
-print(student.to_json())  # Affiche le dictionnaire complet des attributs
-print(student.to_json(["first_name", "age"]))  # Affiche seulement les attributs spécifiés
-
-# Remplacer les attributs avec un nouveau dictionnaire
-student.reload_from_json({"first_name": "Jane", "age": 25})
-print(student.to_json())  # Affiche les attributs mis à jour
-
