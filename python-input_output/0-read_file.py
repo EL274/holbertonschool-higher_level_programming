@@ -4,5 +4,5 @@
 
 def read_file(filename=""):
     """reads text file and prints to stdout"""
-    with open(filename, "r", encoding="utf-8") as file:
-        print(file.read())
+    with open(filename) as f:
+        print(f.read(), end="")
