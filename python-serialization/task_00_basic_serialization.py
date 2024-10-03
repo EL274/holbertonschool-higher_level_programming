@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Module for serializing and saving Python dictionaries to JSON files."""
-import json
 
 
 def serialize_and_save_to_file(data, filename):
