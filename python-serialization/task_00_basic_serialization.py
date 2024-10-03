@@ -4,13 +4,7 @@
 import json
 
 def serialize_and_save_to_file(data, filename):
-    """
-    Serializes a Python dictionary and saves it to a specified file in JSON format.
-
-    Args:
-        data (dict): The dictionary to serialize.
-        filename (str): The name of the file to save the data in.
-    """
+    """Serializes a Python dictionary and saves specified file json"""
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
