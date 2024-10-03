@@ -1,7 +1,8 @@
+#!/usr/bin/python3
+"""defines function writes class of student"""
+
+
 class Student:
-     """defines function writes class of student"""
-
-
 def __init__(self, first_name, last_name, age):
         """Initialisation new class of student"""
         self.first_name = first_name
