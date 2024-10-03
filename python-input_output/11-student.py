@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """defines function write class of student"""
 
+
 class Student:
     def __init__(self, first_name, last_name, age):
         """Initialisation of attribute student"""
