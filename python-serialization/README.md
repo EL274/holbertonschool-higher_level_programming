@@ -1,1 +1,1 @@
-read the file 
+the notion of python about serialization and deserialization
