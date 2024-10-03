@@ -3,9 +3,9 @@
 
 def serialize_and_save_to_file(data, filename):
     """Serializes a Python dictionary and saves it to a specified JSON file."""
+
+
 import json
-
-
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
