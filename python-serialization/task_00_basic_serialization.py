@@ -6,7 +6,7 @@ import json
 
 
 def serialize_and_save_to_file(data, filename):
-    """Serializes a Python dictionary and saves it to a specified JSON file."""
+    """serialize and save data to the specified file pass"""
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
@@ -15,7 +15,7 @@ def serialize_and_save_to_file(data, filename):
 
 
 def load_and_deserialize(filename):
-    """Loads and deserializes JSON data from a specified file."""
+    """load and deserialize data from the specified file pass"""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
