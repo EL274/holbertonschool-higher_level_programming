@@ -13,6 +13,8 @@ import json
         print(f"An error occurred while saving data to {filename}: {e}")
 
 def load_and_deserialize(filename):
+
+    
     """Loads and deserializes JSON data from a specified file."""
     try:
         with open(filename, 'r') as file:
