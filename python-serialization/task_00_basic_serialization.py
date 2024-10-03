@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""defines function writes python module name"""
+
+
 import json
 
 def serialize_and_save_to_file(data, filename):
-    """
-    Serializes Python dictionary and saves specified file in JSON format."""
+    """Serializes Python dictionary and saves specified file in JSON format."""
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
