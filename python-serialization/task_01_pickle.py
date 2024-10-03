@@ -25,7 +25,6 @@ class CustomObject:
             print(f"Object serialized and saved to {filename}")
         except Exception as e:
             print(f"Error serializing object: {e}")
-
     @classmethod
     def deserialize(cls, filename):
         try:
