@@ -4,7 +4,7 @@
 import json
 
 def serialize_and_save_to_file(data, filename):
-    """Serializes a Python dictionary and saves specified file json"""
+    """Serializes a Python dictionary and saves it to a specified JSON file."""
     try:
         with open(filename, 'w') as file:
             json.dump(data, file)
@@ -12,7 +12,7 @@ def serialize_and_save_to_file(data, filename):
         print(f"An error occurred while saving data to {filename}: {e}")
 
 def load_and_deserialize(filename):
-    """Loads and deserializes JSON data from a specified"""
+    """Loads and deserializes JSON data from a specified file."""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
