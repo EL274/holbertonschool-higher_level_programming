@@ -7,6 +7,7 @@ import pickle
 
 class CustomObject:
     """initialization of function"""
+    import più
     def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
