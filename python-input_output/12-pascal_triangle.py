@@ -4,7 +4,6 @@
 
 def pascal_triangle(n):
     """interger representing triangle pascal"""
-    
     if n <= 0:
         return []
     triangle = [[1]]
