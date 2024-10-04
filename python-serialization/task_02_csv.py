@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import csv
 import json
 
@@ -19,4 +20,3 @@ def convert_csv_to_json(csv_filename):
     except Exception as e:
         print(f"Erreur : {e}")
         return False
-
