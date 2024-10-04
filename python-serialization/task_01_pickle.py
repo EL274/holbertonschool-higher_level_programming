@@ -2,9 +2,6 @@
 """defines function creates custom class"""
 
 
-import pickle
-
-
 class CustomObject:
     """initialization of function"""
     import pickle
