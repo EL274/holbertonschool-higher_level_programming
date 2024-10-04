@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""defines function writes json data"""
 import csv
 import json
 
