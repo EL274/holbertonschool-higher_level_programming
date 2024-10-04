@@ -36,18 +36,3 @@ def deserialize_from_xml(filename):
     
     print(f"Data deserialized from {filename} successfully.")
     return dictionary
-
-# Example usage
-if __name__ == "__main__":
-    # Sample dictionary to serialize
-    sample_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
-    
-    # Serialize the dictionary to XML
-    serialize_to_xml(sample_dict, 'task_03_xml.xml')
-    
-    # Deserialize the XML back to a dictionary
-    deserialized_dict = deserialize_from_xml('task_03_xml.xml')
-    
-    # Output the deserialized dictionary
-    print(deserialized_dict)
-
