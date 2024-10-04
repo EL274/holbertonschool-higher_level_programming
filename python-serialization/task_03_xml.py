@@ -33,6 +33,5 @@ def deserialize_from_xml(filename):
     # Iterate through the XML elements and add them to the dictionary
     for child in root:
         dictionary[child.tag] = child.text
-    
     print(f"Data deserialized from {filename} successfully.")
     return dictionary
