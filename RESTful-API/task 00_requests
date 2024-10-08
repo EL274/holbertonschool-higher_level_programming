@@ -23,15 +23,13 @@ La réponse HTTP contient également des informations importantes :
 - **Corps** : Il contient la ressource demandée, telle qu'une page HTML ou des données JSON.
 
 # 4. Méthodes HTTP courantes
-Voici quelques-unes des méthodes HTTP les plus utilisées :
-- **GET** : Récupérer des données depuis le serveur.  
-  **Exemple** : Charger une page web ou obtenir des données depuis une API.
-- **POST** : Envoyer des données au serveur.  
-  **Exemple** : Soumettre un formulaire ou créer un nouveau compte utilisateur.
-- **PUT** : Mettre à jour une ressource existante ou créer une nouvelle ressource si elle n'existe pas.  
-  **Exemple** : Mettre à jour les informations d'un utilisateur.
-- **DELETE** : Supprimer une ressource sur le serveur.  
-  **Exemple** : Supprimer un compte utilisateur ou une publication.
+"""Voici quelques-unes des méthodes HTTP les plus utilisées"""
+class methode :{
+    GET: Récupérer des données depuis le serveur.  
+   POST : Envoyer des données au serveur.   
+    PUT: Mettre à jour une ressource existante ou créer une nouvelle ressource si elle n'existe pas.  
+DELETE : Supprimer une ressource sur le serveur.
+}
 
 # 5. Codes d'état HTTP courants
 Les codes d'état HTTP sont divisés en plusieurs catégories, selon leur première valeur. Voici quelques exemples courants :
