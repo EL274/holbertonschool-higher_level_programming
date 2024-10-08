@@ -1,8 +1,7 @@
-
 # HTTP/HTTPS Basics
 
 # 1. Introduction
-introduction = "Comprendre HTTP et HTTPS, leurs différences et structure."
+"Comprendre HTTP et HTTPS, leurs différences et structure."
 
 # 2. Différences entre HTTP et HTTPS
 differences = {
