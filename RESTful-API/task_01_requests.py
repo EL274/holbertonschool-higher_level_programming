@@ -4,10 +4,10 @@
 import requests
 import json
 
-# URL de l'API
+"""URL de l'API"""
 url = "https://jsonplaceholder.typicode.com/posts"
 
-# 1. Faire une requête GET pour récupérer les posts
+"""Faire une requête GET pour récupérer les posts"""
 response = requests.get(url)
 
 """Vérifier si la requête a réussi (code de statut 200)"""
