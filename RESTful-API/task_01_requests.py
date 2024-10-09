@@ -10,7 +10,7 @@ url = "https://jsonplaceholder.typicode.com/posts"
 # 1. Faire une requête GET pour récupérer les posts
 response = requests.get(url)
 
-# Vérifier si la requête a réussi (code de statut 200)
+"""Vérifier si la requête a réussi (code de statut 200)"""
 if response.status_code == 200:
     # Afficher les posts (JSON formaté)
     posts = response.json()
@@ -19,7 +19,7 @@ if response.status_code == 200:
 else:
     print(f"Erreur lors de la récupération des posts : {response.status_code}")
 
-# 2. Faire une requête POST pour envoyer des données
+"""Faire une requête POST pour envoyer des données"""
 new_post = {
     "title": "foo",
     "body": "bar",
