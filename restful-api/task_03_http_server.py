@@ -43,16 +43,3 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
                 "error": "Endpoint not found"
             }
             self.wfile.write(json.dumps(error_data).encode())
-
-# Fonction pour démarrer le serveur HTTP
-
-
-def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print(f"Starting http server on port {port}...")
-    httpd.serve_forever()
-
-
-if __name__ == "__main__":
-    run()
