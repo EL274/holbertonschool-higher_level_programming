@@ -10,7 +10,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 class SimpleAPIHandler(BaseHTTPRequestHandler):
     """Gère les requêtes GET"""
     def do_GET(self):
-        # Gérer la route principale "/"
         if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
@@ -20,7 +19,6 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            # Les données à renvoyer en Json 
             data = {
                 "name": "John",
                 "age": 30,
