@@ -16,7 +16,6 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain")
             self.end_headers()  # Fin des en-têtes
             self.wfile.write(b"Hello, this is a simple API!")        
-        # Gérer la route "/data"
         elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
