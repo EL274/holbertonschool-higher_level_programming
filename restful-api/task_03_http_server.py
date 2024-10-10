@@ -38,7 +38,6 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
                 "status": "OK"
             }
             self.wfile.write(json.dumps(status_data).encode())
-        
         # Gérer les routes non définies
         else:
             self.send_response(404)
@@ -57,7 +56,3 @@ def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     httpd = server_class(server_address, handler_class)
     print(f"Starting http server on port {port}...")
     httpd.serve_forever()
-
-
-if __name__ == "__main__":
-    run()
