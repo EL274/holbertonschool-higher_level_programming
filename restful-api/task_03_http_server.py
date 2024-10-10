@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-# Classe qui gère les requêtes HTTP
+
+"""Classe qui gère les requêtes HTTP"""
 class SimpleAPIHandler(BaseHTTPRequestHandler):
     
     # Gère les requêtes GET
