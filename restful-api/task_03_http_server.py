@@ -28,7 +28,6 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
                 "city": "New York"
             }
             self.wfile.write(json.dumps(data).encode())
-        
         # Gérer la route "/status"
         elif self.path == "/status":
             self.send_response(200)
