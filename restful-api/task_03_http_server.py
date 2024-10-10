@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 """Classe qui gère les requêtes HTTP"""
 class SimpleAPIHandler(BaseHTTPRequestHandler):
     
-    # Gère les requêtes GET
+    """Gère les requêtes GET"""
     def do_GET(self):
         # Gérer la route principale "/"
         if self.path == "/":
