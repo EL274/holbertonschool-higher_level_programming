@@ -13,8 +13,8 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
         if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
-            self.end_headers()  # Fin des en-têtes
-            self.wfile.write(b"Hello, this is a simple API!")        
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
