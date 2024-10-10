@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+
 from task_02_requests import fetch_and_print_posts, fetch_and_save_posts
 
 fetch_and_print_posts()
@@ -11,4 +14,4 @@ ea molestias quasi exercitationem repellat qui ipsa sit aut
 eum et est occaecati
 nesciunt quas odio
 dolorem eum magni eos aperiam quia
-...
+
