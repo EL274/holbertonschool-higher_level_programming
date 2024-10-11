@@ -48,6 +48,6 @@ def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=80
     print(f'Starting http server on port {port}...')
     httpd.serve_forever()  # Boucle pour écouter les requêtes
 
+
 if __name__ == '__main__':
     run()
-
