@@ -9,7 +9,7 @@ class echoHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('content-type', 'text/html')
             self.end_headers()
-            self.wfile.write(self.path.encode())
+            self.wfile.write('Hello, this is a simple API!'.encode())
 
         elif self.path == '/status':
             # Réponse pour l'endpoint /status
