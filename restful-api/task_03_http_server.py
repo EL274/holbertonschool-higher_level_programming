@@ -23,9 +23,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 "city": "New York"
             }
             self.send_response(200)  # Réponse OK
-            self.send_header('Content-type', 'application/json')  # Type de contenu JSON
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(json.dumps(data).encode())  # Encoder en bytes et envoyer
+            self.wfile.write(json.dumps(data).encode())
 
         elif self.path == '/status':
             # Répondre avec un statut de l'API
@@ -41,9 +41,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"404 Not Found: The requested endpoint was not found on this server.")
 
-# Démarrage du serveur HTTP
+
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
-    server_address = ('', port)  # Serveur écoute sur toutes les interfaces sur le port donné
+    server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f'Starting http server on port {port}...')
     httpd.serve_forever()  # Boucle pour écouter les requêtes
