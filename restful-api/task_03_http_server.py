@@ -3,6 +3,7 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+
 # Classe qui gère les requêtes HTTP
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     # Méthode pour gérer les requêtes GET
