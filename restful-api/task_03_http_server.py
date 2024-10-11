@@ -7,9 +7,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         if self.path == '/':
             # Réponse pour la racine de l'API
             self.send_response(200)
-            self.send_header('content-type', 'text/html')
+            self.send_header('content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write('Hello, this is a simple API!'.encode())
+            self.wfile.write(b'Hello, this is a simple API!'.encode())
 
         elif self.path == '/status':
             # Réponse pour l'endpoint /status
