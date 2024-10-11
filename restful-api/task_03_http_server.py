@@ -47,7 +47,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 def main():
     PORT = 8000
-    server = HTTPServer(('', PORT), echoHandler)
+    server = HTTPServer(('', PORT), SimpleHTTPRequestHandler)
     print('server running on port %s' % PORT)
     server.serve_forever()
 
