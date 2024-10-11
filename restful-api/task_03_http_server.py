@@ -26,20 +26,20 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps(data).encode())
-
         elif self.path == '/status':
             # Répondre avec un statut de l'API
             self.send_response(200)  # Réponse OK
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"OK")  # Réponse avec statut OK
-
         else:
             # Gérer les chemins non définis (404 Not Found)
             self.send_response(404)  # Réponse 404
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"404 Not Found: The requested endpoint was not found on this server.")
+            self.wfile.write(
+                b"404 Not Found: The requested endpoint was not found on this server."
+            )
 
 
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
