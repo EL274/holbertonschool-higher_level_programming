@@ -1,7 +1,4 @@
-#!/usr/bin/python3
-
-import json
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import json from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 # Classe qui gère les requêtes HTTP
