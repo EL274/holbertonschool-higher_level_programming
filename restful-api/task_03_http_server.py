@@ -1,45 +1,53 @@
-#!/usr/bin/python3
 
 
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-
 # Classe qui gère les requêtes HTTP
-class SimpleAPIHandler(BaseHTTPRequestHandler):
+class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+    # Méthode pour gérer les requêtes GET
     def do_GET(self):
-        if self.path == "/":
-            self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+        # Vérification du chemin de la requête
+        if self.path == '/':
+            # Répondre avec un message simple pour la page d'accueil
+            self.send_response(200)  # Réponse avec le code 200 OK
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
-        # Gérer la route "/data"
-        elif self.path == "/data":
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.end_headers()
-            # Les données à renvoyer en JSON
+            self.wfile.write(b"Hello, this is a simple API!")  # Contenu de la réponse
+
+        elif self.path == '/data':
+            # Répondre avec des données JSON
             data = {
                 "name": "John",
                 "age": 30,
                 "city": "New York"
             }
-            self.wfile.write(json.dumps(data).encode())
-        # Gérer la route "/status"
-        elif self.path == "/status":
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_response(200)  # Réponse OK
+            self.send_header('Content-type', 'application/json')  # Type de contenu JSON
             self.end_headers()
-            status_data = {
-                "status": "OK"
-            }
-            self.wfile.write(json.dumps(status_data).encode())
-        # Gérer les routes non définies
+            self.wfile.write(json.dumps(data).encode())  # Encoder en bytes et envoyer
+
+        elif self.path == '/status':
+            # Répondre avec un statut de l'API
+            self.send_response(200)  # Réponse OK
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"OK")  # Réponse avec statut OK
+
         else:
-            self.send_response(404)
-            self.send_header("Content-type", "application/json")
+            # Gérer les chemins non définis (404 Not Found)
+            self.send_response(404)  # Réponse 404
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            error_data = {
-                "error": "Endpoint not found"
-            }
-            self.wfile.write(json.dumps(error_data).encode())
+            self.wfile.write(b"404 Not Found: The requested endpoint was not found on this server.")
+
+# Démarrage du serveur HTTP
+def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
+    server_address = ('', port)  # Serveur écoute sur toutes les interfaces sur le port donné
+    httpd = server_class(server_address, handler_class)
+    print(f'Starting http server on port {port}...')
+    httpd.serve_forever()  # Boucle pour écouter les requêtes
+
+if __name__ == '__main__':
+    run()
+
