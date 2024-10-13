@@ -44,10 +44,10 @@ def add_user():
     new_user= request.get_json()
     username = new_user.get("username")
     if not username:
-        return jsonify({"error": "User already exists"}), 400
+        return jsonify({"error": "User is required"}), 400
     users[username] = new_user
-    return jsonify({"message": "User added", "user": users[username]}), 201
+    return jsonify({"message": "User added", "user": new_user}), 201
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
