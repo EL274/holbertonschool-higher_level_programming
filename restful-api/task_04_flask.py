@@ -1,63 +1,52 @@
 #!/usr/bin/python3
 
 from flask import Flask, jsonify, request
-from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import (
-    JWTManager, create_access_token, jwt_required, get_jwt_identity
-)
 
 app = Flask(__name__)
-app.config['JWT_SECRET_KEY'] = 'votre_cle_secrete'
 
-auth = HTTPBasicAuth()
-jwt = JWTManager(app)
-
-# Utilisateurs avec mots de passe hachés et rôles
+# In-memory user storage
 users = {
-    "admin": {
-        "password": generate_password_hash("admin_password"),
-        "role": "admin"
-    },
-    "user": {
-        "password": generate_password_hash("user_password"),
-        "role": "user"
-    }
+    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}
 }
 
+# Root endpoint
+@app.route('/')
+def home():
+    return "Welcome to the Flask API!"
 
-@auth.verify_password
-def verify_password(username, password):
+# Get all users (JSON data)
+@app.route('/data')
+def get_users():
+    return jsonify(users)
+
+# Get status
+@app.route('/status')
+def status():
+    return "OK"
+
+# Get user by username
+@app.route('/users/<username>')
+def get_user(username):
     user = users.get(username)
-    if user and check_password_hash(user['password'], password):
-        return username
+    if user:
+        return jsonify(user)
+    return jsonify({"error": "User not found"}), 404
 
-
-@app.route('/login', methods=['POST'])
-def login():
-    username = request.json.get('username')
-    password = request.json.get('password')
-    if not verify_password(username, password):
-        return jsonify({"msg": "Bad credentials"}), 401
-    access_token = create_access_token(identity=username)
-    return jsonify(access_token=access_token)
-
-
-@app.route('/protected', methods=['GET'])
-@jwt_required()
-def protected():
-    user = get_jwt_identity()
-    return jsonify({"msg": f"Hello, {user}! This is a protected route."})
-
-
-@app.route('/admin', methods=['GET'])
-@jwt_required()
-def admin():
-    user = get_jwt_identity()
-    if users[user]['role'] != 'admin':
-        return jsonify({"msg": "Admins only!"}), 403
-    return jsonify({"msg": f"Welcome, {user}. You are an admin!"})
-
+# Add a new user (POST request)
+@app.route('/add_user', methods=['POST'])
+def add_user():
+    data = request.get_json()
+    username = data.get("username")
+    
+    if username in users:
+        return jsonify({"error": "User already exists"}), 400
+    
+    users[username] = {
+        "name": data.get("name"),
+        "age": data.get("age"),
+        "city": data.get("city")
+    }
+    return jsonify({"message": "User added", "user": users[username]})
 
 if __name__ == '__main__':
     app.run(debug=True)
