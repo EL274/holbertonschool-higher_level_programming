@@ -23,6 +23,7 @@ users = {
     }
 }
 
+
 @auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
