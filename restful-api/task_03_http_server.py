@@ -4,6 +4,7 @@ import http.server
 import socketserver
 import json
 
+
 # Define the request handler class
 class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
