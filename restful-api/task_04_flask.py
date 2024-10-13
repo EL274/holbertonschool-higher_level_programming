@@ -45,7 +45,7 @@ def add_user():
     username = new_user.get("username")
     if not username:
         return jsonify({"error": "User already exists"}), 400
-    users[username] = data
+    users[username] = new_user
     return jsonify({"message": "User added", "user": users[username]}), 201
 
 
