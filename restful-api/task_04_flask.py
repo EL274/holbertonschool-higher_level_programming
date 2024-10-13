@@ -15,11 +15,13 @@ users = {
     "user": {"password": generate_password_hash("user_password"), "role": "user"}
 }
 
+
 @auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(user['password'], password):
         return username
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -30,10 +32,12 @@ def login():
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token)
 
+
 @app.route('/protected', methods=['GET'])
 @jwt_required()
 def protected():
     return jsonify({"msg": f"Hello, {get_jwt_identity()}! This is a protected route."})
+
 
 @app.route('/admin', methods=['GET'])
 @jwt_required()
@@ -42,6 +46,7 @@ def admin():
     if users[user]['role'] != 'admin':
         return jsonify({"msg": "Admins only!"}), 403
     return jsonify({"msg": f"Welcome, {user}. You are an admin!"})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
