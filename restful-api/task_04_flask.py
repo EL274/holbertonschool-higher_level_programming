@@ -8,21 +8,29 @@ users = {
 }
 
 # Root endpoint
+
+
 @app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
 # Serve JSON data for users
+
+
 @app.route('/data')
 def get_users():
     return jsonify(users)
 
 # Status endpoint
+
+
 @app.route('/status')
 def status():
     return jsonify({"status": "OK"})
 
 # Get details of a specific user by username
+
+
 @app.route('/users/<username>')
 def get_user(username):
     user = users.get(username)
@@ -32,6 +40,8 @@ def get_user(username):
         return jsonify({"error": "User not found"}), 404
 
 # Add a new user via POST request
+
+
 @app.route('/add_user', methods=['POST'])
 def add_user():
     user_data = request.json
@@ -51,5 +61,7 @@ def add_user():
     return jsonify({"message": "User added", "user": users[username]}), 201
 
 # Run the Flask server
+
+
 if __name__ == "__main__":
     app.run(debug=True)
