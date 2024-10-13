@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 # In-memory user storage
 users = {name: tresor 
-         age: 25, ville: LEMANS }
+         age: 25, ville: LEMANS 
+         }
 
 
 @app.route('/')
