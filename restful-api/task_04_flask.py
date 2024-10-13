@@ -34,7 +34,8 @@ def get_user(username):
     user = users.get(username)
     if user:
         return jsonify(user)
-    return jsonify({"error": "User not found"}), 404
+    else:
+        return jsonify({"error": "User not found"}), 404
 
 # Add a new user (POST request)
 
