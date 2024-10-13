@@ -17,7 +17,6 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
-        
         elif self.path == "/data":
             # /data endpoint: returns a sample JSON dataset
             self.send_response(200)
@@ -37,7 +36,6 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             status = {"status": "OK"}
             self.wfile.write(json.dumps(status).encode())
-        
         elif self.path == "/info":
             # /info endpoint: returns version info
             self.send_response(200)
@@ -56,12 +54,14 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             error_message = {"error": "Not Found"}
             self.wfile.write(json.dumps(error_message).encode())
-    
     # Suppress the default logging
+
     def log_message(self, format, *args):
         return
 
 # Set up the HTTP server
+
+
 PORT = 8000
 with socketserver.TCPServer(("", PORT), MyHTTPRequestHandler) as httpd:
     print(f"Serving at port {PORT}")
