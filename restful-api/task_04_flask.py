@@ -1,36 +1,34 @@
 #!/usr/bin/python3
+"""A simple API using Python with Flask
+this function allows to make a request and add new-user"""
 
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
 # In-memory user storage
-users = {
-    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}
-}
-
-# Root endpoint
+users = {}
 
 
 @app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
-# Get all users (JSON data)
+"""returns the list of all usernames"""
 
 
 @app.route('/data')
-def get_users():
-    return jsonify(users)
+def username():
+    return jsonify(list(users.keys()))
 
 
 # Get status
 @app.route('/status')
 def status():
-    return "OK"
+    return ("OK")
 
 
-# Get user by username
+"""Get user by username"""
 @app.route('/users/<username>')
 def get_user(username):
     user = users.get(username)
@@ -45,15 +43,11 @@ def get_user(username):
 def add_user():
     data = request.get_json()
     username = data.get("username")
-    if username in users:
+    if not username:
         return jsonify({"error": "User already exists"}), 400
-    users[username] = {
-        "name": data.get("name"),
-        "age": data.get("age"),
-        "city": data.get("city")
-    }
-    return jsonify({"message": "User added", "user": users[username]})
+    users[username] = data
+    return jsonify({"message": "User added", "user": users[username]}), 201
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
