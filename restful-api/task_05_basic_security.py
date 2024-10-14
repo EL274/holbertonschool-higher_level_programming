@@ -26,8 +26,7 @@ roles = {
     "admin": "admin",
     "user": "user"
 }
-
-# Fonction de vérification des utilisateurs pour HTTP Basic Auth
+"""Authentification of users"""
 @auth.verify_password
 def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
@@ -40,7 +39,7 @@ def verify_password(username, password):
 def basic_protected():
     return jsonify(message=f"Bienvenue, {auth.current_user()}!"), 200
 
-# Route de login pour générer un token JWT
+"""Route de login pour générer un token JWT"""
 @app.route('/login', methods=['POST'])
 def login():
     username = request.json.get('username')
@@ -58,7 +57,7 @@ def jwt_protected():
     current_user = get_jwt_identity()
     return "JWT Auth: Access Granted"
 
-# Route avec contrôle d'accès basé sur les rôles
+"""Route avec contrôle d'accès basé sur les rôles"""
 @app.route('/admin_only')
 @jwt_required()
 def admin_only():
