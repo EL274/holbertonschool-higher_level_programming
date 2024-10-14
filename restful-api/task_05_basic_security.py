@@ -56,7 +56,7 @@ def login():
 @jwt_required()
 def jwt_protected():
     current_user = get_jwt_identity()
-    return "JWT Auth: Access Granted", {current_user['username']}! Vous avez un token valide."), 200
+    return "JWT Auth: Access Granted"
 
 # Route avec contrôle d'accès basé sur les rôles
 @app.route('/admin_only')
