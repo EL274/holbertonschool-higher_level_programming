@@ -31,8 +31,9 @@ roles = {
 
 @auth.verify_password
 def verify_password(username, password):
-    if username in users and check_password_hash(users.get(username), password):
-        return username
+    user = users.get(username)
+    if user and check_password_hash(user['password'], password):
+        return user
     return None
 
 # Route protégée par l'authentification HTTP Basic
@@ -51,7 +52,8 @@ def basic_protected():
 def login():
     username = request.json.get('username')
     password = request.json.get('password')
-    if username in users and check_password_hash(users.get(username), password):
+    user = users.get(username)
+    if  user and check_password_hash(user['password'], password):
         access_token = create_access_token(identity={"username": username, "role": roles[username]})
         return jsonify(access_token=access_token), 200
     return jsonify({"error": "Invalid credentials"}), 401
