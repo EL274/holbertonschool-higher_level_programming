@@ -60,7 +60,7 @@ def login():
         access_token = create_access_token(
                 identity={
                     "username": username,     
-                    "role": user['role']  
+                    "role": user['role'] 
                     }
                 )
 
