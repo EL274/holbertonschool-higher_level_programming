@@ -14,6 +14,7 @@ users = {}
 def home():
     return "Welcome to the Flask API!"
 
+
 """returns the list of all usernames"""
 
 
@@ -29,6 +30,8 @@ def status():
 
 
 """Get user by username"""
+
+
 @app.route('/users/<username>')
 def get_user(username):
     user = users.get(username)
@@ -36,6 +39,7 @@ def get_user(username):
         return jsonify(user)
     else:
         return jsonify({"error": "User not found"}), 404
+
 
 """Add a new user (POST request)"""
 
