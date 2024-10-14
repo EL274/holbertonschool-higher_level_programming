@@ -55,7 +55,7 @@ def login():
 @jwt_required()
 def jwt_protected():
     current_user = get_jwt_identity()
-    return jsonify("JWT Auth: Access Granted", {current_user['username']}! Vous avez un token valide."), 200
+    return "JWT Auth: Access Granted", {current_user['username']}! Vous avez un token valide."), 200
 
 # Route avec contrôle d'accès basé sur les rôles
 @app.route('/admin_only')
@@ -63,8 +63,8 @@ def jwt_protected():
 def admin_only():
     current_user = get_jwt_identity()
     if current_user['role'] != 'admin':
-        return jsonify({"error": "no access: just administrators."}), 403
-    return jsonify("Admin Access: Granted", {current_user['username']}! Vous êtes un administrateur."), 200
+        return jsonify({"error": "Admin access required"}), 403
+    return "Admin Access: Granted"
 
 @jwt.unauthorized_loader
   def handle_unauthorized_error(err):
@@ -85,7 +85,6 @@ def admin_only():
 @jwt.needs_fresh_token_loader
   def handle_needs_fresh_token_error(err):
       return jsonify({"error": "Fresh token required"}), 401
-
 
 if __name__ == '__main__':
     app.run()
