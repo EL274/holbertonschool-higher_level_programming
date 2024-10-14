@@ -7,9 +7,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # In-memory user storage
-users = {name: tresor 
-         age: 25, ville: LEMANS 
-         }
+users = {}
 
 
 @app.route('/')
@@ -45,7 +43,7 @@ def get_user(username):
 @app.route("/add_user", methods=['POST'])
 def add_user():
     """add a new user via POST request."""
-    new_user= request.get_json()
+    new_user = request.get_json()
     username = new_user.get("username")
     if not username:
         return jsonify({"error": "Username is required"}), 400
