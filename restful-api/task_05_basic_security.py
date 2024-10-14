@@ -57,8 +57,10 @@ def login():
 
     user = users.get(username)
     if user and check_password_hash(user['password'], password):
-        access_token = create_access_token(identity={"username": username, "role": 
-                                                     user['role']})
+        access_token = create_access_token(
+    identity={"username": username, "role": user['role']}
+)
+
         return jsonify(access_token=access_token), 200
     return jsonify({"error": "Invalid credentials"}), 401
 # Route protégée par JWT
