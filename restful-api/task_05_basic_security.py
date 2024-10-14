@@ -59,7 +59,7 @@ def login():
     if user and check_password_hash(user['password'], password):
         access_token = create_access_token(
                 identity={
-        "username": username, 
+                    "username": username, 
                     "role": user['role']
                     }    
                 )
