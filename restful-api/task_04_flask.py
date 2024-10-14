@@ -40,7 +40,7 @@ def get_user(username):
     else:
         return jsonify({"error": "User not found"}), 404
 
-
+ 
 """Add a new user (POST request)"""
 
 
