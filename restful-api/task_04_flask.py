@@ -42,7 +42,7 @@ def get_user(username):
 
 @app.route("/add_user", methods=['POST'])
 def add_user():
-    """add a new user via POST request."""
+    """Handles adding a new user via POST request."""
     new_user = request.get_json()
     username = new_user.get("username")
     if not username:
