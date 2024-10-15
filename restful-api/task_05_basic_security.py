@@ -28,7 +28,6 @@ users = {
         "password": generate_password_hash("password"),
         "role": "admin"
         }
-   
 }
 
 roles = {
@@ -61,18 +60,12 @@ def basic_protected():
 def login():
     username = request.json.get('username')
     password = request.json.get('password')
-    if not username or not password:
-        return jsonify({"error": "Username and password are required"}), 400
 
     user = users.get(username)
     if user and check_password_hash(user['password'], password):
         access_token = create_access_token(
-                identity={
-                    "username": username,     
-                    "role": user['role'] 
-                    }
-                )
-
+            identity={'username': username, "role": user['role']}
+            )
         return jsonify(access_token=access_token), 200
     return jsonify({"error": "Invalid credentials"}), 401
 # Route protégée par JWT
