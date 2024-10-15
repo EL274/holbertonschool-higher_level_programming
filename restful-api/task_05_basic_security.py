@@ -16,7 +16,6 @@ app.config['JWT_SECRET_KEY'] = 'votre_cle_secrete'
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
-# Exemple d'utilisateurs avec des mots de passe hachés
 users = {
     "user1": {
         "username": "user1",
