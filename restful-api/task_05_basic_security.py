@@ -18,6 +18,7 @@ jwt = JWTManager(app)
 
 # Exemple d'utilisateurs avec des mots de passe hachés
 users = {
+     
     "admin": generate_password_hash("admin_password"),
     "user": generate_password_hash("user_password")
 }
