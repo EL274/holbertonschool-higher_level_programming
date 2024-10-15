@@ -9,7 +9,6 @@ from flask_jwt_extended import (
 
 app = Flask(__name__)
 
-# Clé secrète pour JWT
 app.config['JWT_SECRET_KEY'] = 'votre_cle_secrete'
 
 # Initialisation des extensions
