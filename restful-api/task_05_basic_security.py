@@ -67,7 +67,6 @@ def login():
             )
         return jsonify(access_token=access_token), 200
     return jsonify({"error": "Invalid credentials"}), 401
-# Route protégée par JWT
 
 
 @app.route('/jwt_protected')
