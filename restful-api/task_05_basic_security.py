@@ -52,8 +52,9 @@ def basic_protected():
 
 @app.route('/login', methods=['POST'])
 def login():
-    username = request.json.get('username')
-    password = request.json.get('password')
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
 
     user = users.get(username)
     if user and check_password_hash(user['password'], password):
