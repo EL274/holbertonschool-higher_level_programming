@@ -8,7 +8,7 @@ from flask_jwt_extended import (JWTManager, create_access_token,
 
 app = Flask(__name__)
 
-app.config['JWT_SECRET_KEY'] = ''
+app.config['JWT_SECRET_KEY'] = 'your-secret-key'
 
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
@@ -107,4 +107,4 @@ def handle_needs_fresh_token_error(err):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
