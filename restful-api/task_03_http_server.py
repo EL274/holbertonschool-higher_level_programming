@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""define the fonction of http sever"""
+
 from urllib.parse import urlparse
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
