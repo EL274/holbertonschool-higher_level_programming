@@ -1,2 +1,2 @@
---lists all of databases.
+--lists all of databases my SQL.
 SHOWDATABASES
