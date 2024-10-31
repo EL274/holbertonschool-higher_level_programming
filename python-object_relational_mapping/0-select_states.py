@@ -6,6 +6,10 @@
 import sys
 import MySQLdb
 
+if len(sys.argv) != 4:
+    print("Usage: ./0-select_states.py <username> <password> <database>")
+    sys.exit(1)
+
 if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
