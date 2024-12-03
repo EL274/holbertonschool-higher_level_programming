@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+a[1,2,3]
+b = a
+b.append(4)
+
+if a == b :
+print("the lists 'a' and 'b' have the content")
+
+if a is b :
+print("the lists 'a' and 'b' point to the same object in memory" )
+else :
+print("the lists 'a' and 'b' don't point to the same object in memory")
