@@ -1,6 +1,5 @@
 s
 a= 89
 b = a
-
-a is b 
+a is b:
 print("the lists 'a' and 'b' have the same point object in memory")
