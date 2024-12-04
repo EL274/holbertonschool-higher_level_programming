@@ -1,0 +1,7 @@
+Dans la première ligne, a = (1) assigne la valeur 1 à la variable a. Ici, les parenthèses ne créent pas un tuple ; elles servent simplement à grouper le nombre 1. Par conséquent, a est de type int.
+de même, b = (1) assigne également la valeur 1 à la variable b. Comme a, b est également de type int.
+
+L'expression a is b vérifie si a et b font référence au même objet en mémoire.
+Étant donné que a et b sont tous deux égaux à 1, ils pointent vers le même objet entier en Python, grâce à l'internement des petits entiers.
+
+L'expression a is b va donc évaluer à True
