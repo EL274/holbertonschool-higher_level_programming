@@ -1,0 +1,3 @@
+Une liste, l1, est créée avec les éléments [1, 2, 3].
+l2 est assignée à l1. Cela signifie que l2 et l1 pointent vers le même objet en mémoire
+L'opérateur is compare si deux variables pointent vers le même objet en mémoire,dans ce cas, puisque l2 est une référence directe à l1, elles sont exactement le même objet.
