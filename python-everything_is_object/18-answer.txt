@@ -1,0 +1,12 @@
+La fonction assign_value prend deux arguments, n et v.
+À l'intérieur de la fonction, la ligne n = v réassigne la variable locale n pour qu'elle pointe vers l'objet référencé par v.
+
+Une liste l1 est créée avec les éléments [1, 2, 3].
+Une autre liste l2 est créée avec les éléments [4, 5, 6].
+Lorsque assign_value(l1, l2) est appelé :
+
+    La référence de l1 est passée à n et celle de l2 est passée à v.
+    La ligne n = v fait en sorte que n pointe désormais vers v (la liste [4, 5, 6]).
+    Cependant, cette réassignation ne modifie pas la référence de l1 en dehors de la fonction. l1 continue de pointer vers [1, 2, 3]
+
+    Comme l1 n’a pas été modifiée en dehors de la fonction, son contenu reste [1, 2, 3].
