@@ -1,0 +1,4 @@
+a est assigné à une tuple vide (), et b est également assigné à une autre tuple vide (),deux tuples vides sont considérés comme des objets distincts en mémoire.
+'expression a is b vérifie si a et b font référence au même objet en mémoire.
+Bien que les deux soient des tuples vides et aient le même contenu, ils sont des objets distincts. Par conséquent, a et b ne pointent pas vers le même objet.
+L'expression a is b va évaluer à False.
