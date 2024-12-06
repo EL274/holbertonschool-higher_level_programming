@@ -10,3 +10,4 @@ Lorsque assign_value(l1, l2) est appelé :
     Cependant, cette réassignation ne modifie pas la référence de l1 en dehors de la fonction. l1 continue de pointer vers [1, 2, 3]
 
     Comme l1 n’a pas été modifiée en dehors de la fonction, son contenu reste [1, 2, 3].
+    

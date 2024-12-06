@@ -1,3 +1,3 @@
 l1:cree une liste l1 contenant des éléments [1,2,3]
 l2:cree une autre liste contenant des mêmes éléments
-l3:l'opérateur == compare les listes, les deux listes contiennent les mêmes éléments donc la comparaison renvoit true 
+l3:l'opérateur == compare les listes, les deux listes contiennent les mêmes éléments donc la comparaison renvoit true
