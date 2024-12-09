@@ -1,3 +1,1 @@
-l1: assigne la chaîne de caractère "Best School" à s1
-l2: assigne la valeur de s1 à s2 
-l3: compare la s1 et la s1 teste si les deux variables pointent vers le même objet en memoire
+true
