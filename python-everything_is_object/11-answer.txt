@@ -1,3 +1,1 @@
-l1:cree une liste l1 contenant des éléments [1,2,3]
-l2:cree une autre liste contenant des mêmes éléments
-l3:L'opérateur is compare si deux objets sont exactement le même objet en mémoire (ils partagent la même adresse mémoire).
+false
