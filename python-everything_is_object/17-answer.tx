@@ -1,10 +1,2 @@
-La fonction increment prend un argument n (qui peut être une liste).Elle utilise la méthode append(4) pour ajouter le nombre 4 à la liste référencée par n.
-Une liste l est créée avec les éléments [1, 2, 3].
-Lorsque increment(l) est appelé :
 
-    l est passé à la fonction en tant que référence.
-    À l'intérieur de la fonction, n fait référence au même objet en mémoire que l.
-    La méthode append(4) modifie directement l'objet l en mémoire en ajoutant 4 à la liste.
-
-    Puisque increment a modifié directement l'objet l en mémoire, le contenu de la liste l est maintenant [1, 2, 3, 4].
     
