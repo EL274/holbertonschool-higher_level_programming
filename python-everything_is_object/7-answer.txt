@@ -1,3 +1,1 @@
-l1: assigne le caractère "Best" à s1
-l2: assigne à s2 la valeur de référence s1
-l3: compare la s1 et s2
+true
